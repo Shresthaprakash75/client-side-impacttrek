@@ -38,19 +38,16 @@ const Header = () => {
 
                     {/* nav items */}
                     <ul className="nav nav-pills">
-
-                        <li className="nav-item"><a className="nav-link">
-                            <button className="btn btn-outline-secondary" type="button">
-                            <Link to="/planTreks">Plan Trek</Link>
-                                </button>
-                        </a></li>
-                        <li className="nav-item"><a href="#" className="nav-link">
-                            <button className="btn btn-outline-secondary" type="button">Book Trek</button>
-                        </a></li>
-                        <li className="nav-item"><a href="#" className="nav-link">
-                            <button className="btn btn-outline-secondary" type="button">Contact Us</button>
-                        </a></li>
-                        
+                        {/* <li className="nav-item"><a  className="nav-link active" aria-current="page">Home</a></li> */}
+                        <li className="nav-item">
+                            <Link to="/choose-trek" className="nav-link">Plan Trek </Link>    
+                        </li>
+                        <li className="nav-item">
+                            <Link to="/book-trek" className="nav-link">Book Trek</Link>    
+                        </li>
+                        <li className="nav-item">
+                            <Link to="/contact-us" className="nav-link">Contact Us</Link>    
+                        </li>
                     </ul>
                 </header>
             </div>
