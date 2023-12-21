@@ -1,9 +1,8 @@
 import * as React from "react"
 import type { HeadFC, PageProps } from "gatsby"
 
-import Container from 'react-bootstrap/Container';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import NavigationBar from "../components/header";
+import Header from "../components/header";
 
 const pageStyles = {
   color: "#232129",
@@ -14,12 +13,14 @@ const pageStyles = {
 const IndexPage: React.FC<PageProps> = () => {
   return (
     <>
-      <NavigationBar />
-      <Container>
-        <main>
-          hh
-        </main>
-      </Container>
+      <Header />
+      <main>
+        <ul>
+          <li>plan your Trek</li>
+          <li>book trek</li>
+          <li>talk to us</li>
+        </ul>
+      </main>
     </>
   )
 }
