@@ -40,16 +40,16 @@ const Header = () => {
                     <ul className="nav nav-pills">
                         {/* <li className="nav-item"><a  className="nav-link active" aria-current="page">Home</a></li> */}
                         <li className="nav-item">
-                            <Link to="/choose-trek" className="nav-link">Plan Trek </Link>    
+                            <Link to="/choose-trek" className="nav-link text-secondary">Plan Trek </Link>    
                         </li>
                         <li className="nav-item">
-                            <Link to="/book-trek" className="nav-link">Book Trek</Link>    
+                            <Link to="/book-trek" className="nav-link text-secondary">Book Trek</Link>    
                         </li>
                         <li className="nav-item">
-                            <Link to="/contact-us" className="nav-link">Contact Us</Link>    
+                            <Link to="/contact-us" className="nav-link text-secondary">Contact Us</Link>    
                         </li>
                         <li className="nav-item">
-                            <Link to="/about-us" className="nav-link">About Us</Link>    
+                            <Link to="/about-us" className="nav-link text-secondary">About Us</Link>    
                         </li>
                     </ul>
                 </header>

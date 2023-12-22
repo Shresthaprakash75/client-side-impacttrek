@@ -15,7 +15,7 @@ function ContactUs() {
                             <li>Thanks for wanting to know about us</li>
                         </ul>
                     </li>
-                    <li>About Me
+                    <li>About the Founder
                         <ul>
                             <li>My background</li>
                             {/* who am I? */}
@@ -36,7 +36,7 @@ function ContactUs() {
                         </ul>
                     </li>
 
-                    <li>About us
+                    <li>About Impacttrek
                         <ul>
                             <li>Our Story : How Impacttrek Started</li>
                             <li>About Impacttrek
