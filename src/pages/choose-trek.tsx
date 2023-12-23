@@ -2,6 +2,7 @@
 import React from 'react';
 import Header from '../components/header';
 import Footer from '../components/footer';
+import type { HeadFC, PageProps } from "gatsby"
 
 function PlanTreks() {
     return (
@@ -114,3 +115,4 @@ function PlanTreks() {
 }
 
 export default PlanTreks;
+export const Head: HeadFC = () => <title>All Treks | Impacttrek</title>

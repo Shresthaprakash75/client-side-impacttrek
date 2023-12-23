@@ -2,6 +2,7 @@
 import React from 'react';
 import Header from '../components/header';
 import Footer from '../components/footer';
+import type { HeadFC } from "gatsby"
 
 function ContactUs() {
     return (
@@ -20,3 +21,4 @@ function ContactUs() {
 }
 
 export default ContactUs;
+export const Head: HeadFC = () => <title>Contact Us | Impacttrek</title>

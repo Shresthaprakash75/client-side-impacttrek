@@ -3,6 +3,7 @@ import React from 'react';
 import Header from '../components/header';
 import Footer from '../components/footer';
 import { Link } from 'gatsby';
+import type { HeadFC } from "gatsby"
 
 function ContactUs() {
     return (
@@ -68,3 +69,4 @@ function ContactUs() {
 }
 
 export default ContactUs;
+export const Head: HeadFC = () => <title>About Us | Impacttrek</title>

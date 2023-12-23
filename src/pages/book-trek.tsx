@@ -2,6 +2,7 @@
 import React from 'react';
 import Header from '../components/header';
 import Footer from '../components/footer';
+import type { HeadFC} from "gatsby"
 
 function BookTrek() {
     return (
@@ -234,3 +235,4 @@ function BookTrek() {
 }
 
 export default BookTrek;
+export const Head: HeadFC = () => <title>Booking | Impacttrek</title>
