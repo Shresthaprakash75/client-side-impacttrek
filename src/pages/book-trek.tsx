@@ -235,4 +235,4 @@ function BookTrek() {
 }
 
 export default BookTrek;
-export const Head: HeadFC = () => <title>Booking | Impacttrek</title>
+export const Head: HeadFC = () => <title>Impacttrek | Booking</title>

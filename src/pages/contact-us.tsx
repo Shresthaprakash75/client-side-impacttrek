@@ -21,4 +21,4 @@ function ContactUs() {
 }
 
 export default ContactUs;
-export const Head: HeadFC = () => <title>Contact Us | Impacttrek</title>
+export const Head: HeadFC = () => <title>Impacttrek | Contact Us</title>

@@ -115,4 +115,4 @@ function PlanTreks() {
 }
 
 export default PlanTreks;
-export const Head: HeadFC = () => <title>All Treks | Impacttrek</title>
+export const Head: HeadFC = () => <title>Impacttrek | All Treks</title>
