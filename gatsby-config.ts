@@ -9,7 +9,16 @@ const config: GatsbyConfig = {
   // If you use VSCode you can also use the GraphQL plugin
   // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
-  plugins: [],
+  plugins: [
+    {
+      resolve: 'gatsby-source-graphql',
+      options: {
+        typeName: 'Trek',
+        fieldName: 'trek',
+        url: 'http://localhost:4000/graphql', // Replace with your GraphQL server endpoint
+      },
+    },
+  ],
 }
 
 export default config
