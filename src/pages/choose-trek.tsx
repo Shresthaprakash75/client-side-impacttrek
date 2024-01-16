@@ -6,7 +6,8 @@ import Header from '../components/header';
 import Footer from '../components/footer';
 
 function PlanTreks({ data }) {
-  const treks = data.trek.treks || [];
+  // Destructure the treks array directly from the GraphQL query result
+  const { treks } = data.trek;
 
   return (
     <>
@@ -18,24 +19,12 @@ function PlanTreks({ data }) {
               {treks.map((trek) => (
                 <div className="col" key={trek.trek_id}>
                   <div className="card shadow-sm">
-                    <svg
-                      className="bd-placeholder-img card-img-top"
-                      width="100%"
-                      height="225"
-                      xmlns="http://www.w3.org/2000/svg"
-                      role="img"
-                      aria-label="Placeholder: Thumbnail"
-                      preserveAspectRatio="xMidYMid slice"
-                      focusable="false"
-                    >
-                      <title>Placeholder</title>
-                      <rect width="100%" height="100%" fill="#55595c" />
-                      <text x="50%" y="50%" fill="#eceeef" dy=".3em">
-                        Thumbnail
-                      </text>
-                    </svg>
+                    {/* Assuming you have actual images for treks, use them here */}
+                    <img src={trek.images_json[0]} className="bd-placeholder-img card-img-top" alt={trek.trek_name} />
+
                     <div className="card-body">
-                      <p className="card-text">{trek.trek_name}</p>
+                      <h5 className="card-title">{trek.trek_name}</h5>
+                      <p className="card-text">{trek.description}</p>
                       <div className="d-flex justify-content-between align-items-center">
                         <div className="btn-group">
                           <button type="button" className="btn btn-sm btn-outline-secondary">
@@ -45,7 +34,7 @@ function PlanTreks({ data }) {
                             Learn More
                           </button>
                         </div>
-                        <small className="text-body-secondary">max alt: {trek.max_elevation}</small>
+                        <small className="text-muted">Max Altitude: {trek.max_elevation}</small>
                       </div>
                     </div>
                   </div>
