@@ -40,7 +40,7 @@ const Header = () => {
                     <ul className="nav nav-pills">
                         {/* <li className="nav-item"><a  className="nav-link active" aria-current="page">Home</a></li> */}
                         <li className="nav-item">
-                            <Link to="/choose-trek" className="nav-link">Plan Trek </Link>    
+                            <Link to="/treks" className="nav-link">Plan Trek </Link>    
                         </li>
                         <li className="nav-item">
                             <Link to="/book-trek" className="nav-link">Book Trek</Link>    

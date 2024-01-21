@@ -17,7 +17,7 @@ const Footer = () => {
                     </li>
 
                 </ul>
-                <p className="text-center text-body-secondary">&copy; 2023 Impacttrek, Inc</p>
+                <p className="text-center text-body-secondary">&copy; 2024 Impacttrek, Inc</p>
             </footer>
         </div>
     )

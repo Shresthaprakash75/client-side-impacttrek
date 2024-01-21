@@ -2,8 +2,8 @@ import type { GatsbyConfig } from "gatsby"
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `gatsbyjs-impacttrek`,
-    siteUrl: `https://www.yourdomain.tld`,
+    title: `impacttrek`,
+    siteUrl: `https://www.impacttrek.com`,
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
@@ -11,13 +11,13 @@ const config: GatsbyConfig = {
   graphqlTypegen: true,
   plugins: [
     {
-      resolve: 'gatsby-source-graphql',
+      resolve: `gatsby-source-filesystem`,
       options: {
-        typeName: 'Trek',
-        fieldName: 'trek',
-        url: 'http://localhost:4000/graphql', // Replace with your GraphQL server endpoint
+        name: `treks`,
+        path: `${__dirname}/treks/`,
       },
     },
+    "gatsby-plugin-mdx",
   ],
 }
 
