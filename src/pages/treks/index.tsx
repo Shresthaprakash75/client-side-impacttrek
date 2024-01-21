@@ -1,7 +1,7 @@
 // src/pages/treks.js
 
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import Header from '../../components/header';
 import Footer from '../../components/footer';
 
@@ -31,9 +31,15 @@ function PlanTreks({ data }) {
                           <button type="button" className="btn btn-sm btn-outline-secondary">
                             Book Now
                           </button>
-                          <button type="button" className="btn btn-sm btn-outline-secondary">
-                            Learn More
-                          </button>
+                          
+                          
+                            <button type="button" className="btn btn-sm btn-outline-secondary">
+                            <Link to={`/treks/${trek.frontmatter.slug}`}>
+
+                              Learn More
+                              </Link>
+                            </button>
+                          
                         </div>
                         <small className="text-muted">Max Altitude: {trek.frontmatter.max_elevation}</small>
                       </div>
