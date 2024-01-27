@@ -7,7 +7,8 @@ import Footer from '../../components/footer';
 
 function TrekCard({ trek }) {
   return (
-      <div className="card shadow-sm">
+    < div className="col mb-4">
+      <div className="card shadow-sm ">
         {/* Uncomment when you have actual images for treks */}
         {/* <img
           src={trek.images_json[0]}
@@ -23,7 +24,7 @@ function TrekCard({ trek }) {
                 Book Now
               </button>
               <button type="button" className="btn btn-sm btn-outline-secondary">
-              <Link to={`/treks/${trek.frontmatter.slug}`} className="col" key={trek.id}>
+              <Link to={`/treks/${trek.frontmatter.slug}`} key={trek.id}>
               
                 Learn More
                 </Link>
@@ -35,6 +36,8 @@ function TrekCard({ trek }) {
           </div>
         </div>
       </div>
+
+    </div>
   );
 }
 
