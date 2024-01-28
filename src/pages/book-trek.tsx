@@ -1,5 +1,7 @@
 // src/App.js
 import React from 'react';
+import type { HeadFC } from "gatsby"
+
 import Header from '../components/header';
 import Footer from '../components/footer';
 
@@ -21,3 +23,4 @@ function BookTrek() {
 }
 
 export default BookTrek;
+export const Head: HeadFC = () => <title>Impact trek | Booking</title>

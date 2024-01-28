@@ -1,5 +1,7 @@
 // src/App.js
 import React from 'react';
+import type { HeadFC, PageProps } from "gatsby"
+
 import Header from '../components/header';
 import Footer from '../components/footer';
 import { Link } from 'gatsby';
@@ -68,3 +70,4 @@ function ContactUs() {
 }
 
 export default ContactUs;
+export const Head: HeadFC = () => <title>Impact trek | About Us</title>
