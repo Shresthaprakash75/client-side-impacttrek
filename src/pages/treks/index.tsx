@@ -1,7 +1,7 @@
 // src/pages/treks.js
 
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql, Link, HeadFC } from 'gatsby';
 import Header from '../../components/header';
 import Footer from '../../components/footer';
 
@@ -79,3 +79,4 @@ export const query = graphql`
 `;
 
 export default PlanTreks;
+export const Head: HeadFC = () => <title>Impact trek | All treks</title>

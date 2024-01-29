@@ -1,6 +1,6 @@
 import * as React from 'react'
 // import Layout from '../../components/layout'
-// import Seo from '../../components/seo'
+import Seo from '../../components/seo'
 import { graphql } from 'gatsby'
 
 const TrekDetail = ({ data, children }) => {
@@ -26,6 +26,7 @@ export const query = graphql`
   }
 `
 
-// export const Head = ({ data }) => <Seo title={data.mdx.frontmatter.title} />
+export const Head = ({ data }) => <Seo title={data.mdx.frontmatter.title} />
 
 export default TrekDetail
+// export const Head: HeadFC = () => <title>nn</title>
