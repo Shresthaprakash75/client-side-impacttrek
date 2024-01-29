@@ -16,11 +16,14 @@ function TrekCard({ trek }) {
           alt={`Image for ${trek.frontmatter.title}`}
         /> */}
         <div className="card-body">
+        <Link to={`/treks/${trek.frontmatter.slug}`} key={trek.id}>
+              
           <h5 className="card-title">{trek.frontmatter.title}</h5>
+          </Link>
           <p className="card-text">{trek.frontmatter.description}</p>
           <div className="d-flex justify-content-between align-items-center">
             <div className="btn-group">
-              <button type="button" className="btn btn-sm btn-outline-secondary">
+              {/* <button type="button" className="btn btn-sm btn-outline-secondary">
                 Book Now
               </button>
               <button type="button" className="btn btn-sm btn-outline-secondary">
@@ -28,7 +31,7 @@ function TrekCard({ trek }) {
               
                 Learn More
                 </Link>
-              </button>
+              </button> */}
     
               
             </div>
