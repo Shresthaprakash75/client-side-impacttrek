@@ -4,8 +4,11 @@ import React from 'react';
 import { graphql, Link, HeadFC } from 'gatsby';
 import Header from '../../components/header';
 import Footer from '../../components/footer';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 function TrekCard({ trek }) {
+  const image = getImage(trek.frontmatter.hero_image)
+
   return (
     < div className="col mb-4">
       <div className="card shadow-sm ">
@@ -15,6 +18,10 @@ function TrekCard({ trek }) {
           className="bd-placeholder-img card-img-top"
           alt={`Image for ${trek.frontmatter.title}`}
         /> */}
+        <GatsbyImage
+      image={image}
+      alt={trek.frontmatter.hero_image_alt}
+    />
         <div className="card-body">
         <Link to={`/treks/${trek.frontmatter.slug}`} key={trek.id}>
               
@@ -74,6 +81,14 @@ export const query = graphql`
           date
           description
           max_elevation
+          hero_image_alt
+          hero_image_credit_link
+          hero_image_credit_text
+          hero_image {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
         }
         id
       }
