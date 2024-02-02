@@ -38,15 +38,28 @@ const TrekDetail = ({ data, children }) => {
       </section>
 
       <section className="mt-4">
-        <h2>Itinerary</h2>
-        <ul className="list-group">
-          {data.mdx.frontmatter.itineraries.map((day, index) => (
-            <li key={index} className="list-group-item">
-              <strong>Day {day.day}:</strong> {day.description}
-            </li>
-          ))}
-        </ul>
-      </section>
+  <h2>Itinerary</h2>
+  <div className="accordion" id="itineraryAccordion">
+    {data.mdx.frontmatter.itineraries.map((day, index) => (
+      <div key={index} className="accordion-item">
+        <h2 className="accordion-header" id={`heading${index}`}>
+          <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target={`#collapse${index}`} aria-expanded="true" aria-controls={`collapse${index}`}>
+            Day {day.day}: {day.title}
+          </button>
+        </h2>
+        <div id={`collapse${index}`} className={`accordion-collapse collapse${index === 0 ? ' show' : ''}`} aria-labelledby={`heading${index}`} data-bs-parent="#itineraryAccordion">
+          <div className="accordion-body">
+            <GatsbyImage image={getImage(day.image)} alt={`Day ${day.day}`} className="img-fluid rounded mb-3" />
+            <p className="mb-3">{day.description}</p>
+            {/* You can add more details, styling, or components as needed */}
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+
 
       <section className="mt-4">
         <h2>About the Trek</h2>
@@ -80,7 +93,13 @@ export const query = graphql`
         }
         itineraries {
           day
+          title
           description
+          image {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
         }
       }
       body
