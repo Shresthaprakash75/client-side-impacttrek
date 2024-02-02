@@ -7,46 +7,37 @@ import Footer from '../../components/footer';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 function TrekCard({ trek }) {
-  const image = getImage(trek.frontmatter.hero_image)
+  // Check if trek.frontmatter is defined
+  if (!trek.frontmatter) {
+    // Handle the case where frontmatter is not defined (return a placeholder, throw an error, etc.)
+    return null;
+  }
+
+  // Check if hero_images is defined and not an empty array
+  const heroImages = trek.frontmatter.hero_images;
+  const firstImage = heroImages && heroImages.length > 0 ? heroImages[0] : null;
+
+  // If firstImage is null, you might want to handle it appropriately
+
+  const image = firstImage ? getImage(firstImage.path.childImageSharp.gatsbyImageData) : null;
 
   return (
-    < div className="col mb-4">
-      <div className="card shadow-sm ">
-        {/* Uncomment when you have actual images for treks */}
-        {/* <img
-          src={trek.images_json[0]}
-          className="bd-placeholder-img card-img-top"
-          alt={`Image for ${trek.frontmatter.title}`}
-        /> */}
-        <GatsbyImage
-      image={image}
-      alt={trek.frontmatter.hero_image_alt}
-    />
+    <div className="col mb-4">
+      <div className="card shadow-sm">
+        {image && <GatsbyImage image={image} alt={firstImage.alt} />}
         <div className="card-body">
-        <Link to={`/treks/${trek.frontmatter.slug}`} key={trek.id}>
-              
-          <h5 className="card-title">{trek.frontmatter.title}</h5>
+          <Link to={`/treks/${trek.frontmatter.slug}`} key={trek.id}>
+            <h5 className="card-title">{trek.frontmatter.title}</h5>
           </Link>
           <p className="card-text">{trek.frontmatter.description}</p>
           <div className="d-flex justify-content-between align-items-center">
             <div className="btn-group">
-              {/* <button type="button" className="btn btn-sm btn-outline-secondary">
-                Book Now
-              </button>
-              <button type="button" className="btn btn-sm btn-outline-secondary">
-              <Link to={`/treks/${trek.frontmatter.slug}`} key={trek.id}>
-              
-                Learn More
-                </Link>
-              </button> */}
-    
-              
+              {/* Your buttons go here */}
             </div>
             <small className="text-muted">Max Altitude: {trek.frontmatter.max_elevation}</small>
           </div>
         </div>
       </div>
-
     </div>
   );
 }
@@ -71,6 +62,7 @@ function PlanTreks({ data }) {
   );
 }
 
+
 export const query = graphql`
   query MyQuery {
     allMdx {
@@ -81,13 +73,15 @@ export const query = graphql`
           date
           description
           max_elevation
-          hero_image_alt
-          hero_image_credit_link
-          hero_image_credit_text
-          hero_image {
-            childImageSharp {
-              gatsbyImageData
+          hero_images {
+            path {
+              childImageSharp {
+                gatsbyImageData
+              }
             }
+            alt
+            credit_text
+            credit_link
           }
         }
         id
