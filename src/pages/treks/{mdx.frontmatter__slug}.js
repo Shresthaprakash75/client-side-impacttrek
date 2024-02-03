@@ -13,22 +13,15 @@ const TrekDetail = ({ data, children }) => {
       <Seo title={data.mdx.frontmatter.title} />
 
       <div className="row">
-        <div className="col-md-8">
+        <div className="col-md-8 position-relative text-center">
           <GatsbyImage image={heroImage} alt={data.mdx.frontmatter.hero_images[0].alt} className="img-fluid rounded mb-3" />
-        </div>
-
-        <div className="col-md-4">
-          <h1 className="mb-4">{data.mdx.frontmatter.title}</h1>
-          <p className="lead">{data.mdx.frontmatter.description}</p>
-          <ul className="list-unstyled">
-            <li><strong>Max Altitude:</strong> {data.mdx.frontmatter.max_elevation}</li>
-            <li><strong>Duration:</strong> {data.mdx.frontmatter.duration}</li>
-            <li><strong>Difficulty:</strong> {data.mdx.frontmatter.difficulty}</li>
-          </ul>
+          <div className="position-absolute top-50 start-50 translate-middle">
+            <h1 className="text-white display-4">{data.mdx.frontmatter.title}</h1>
+          </div>
         </div>
       </div>
 
-      {/* highlight */}
+      {/* Highlights */}
       <section className="mt-4">
         <h2>Highlights</h2>
         <ul className="list-group">
@@ -37,43 +30,40 @@ const TrekDetail = ({ data, children }) => {
           ))}
         </ul>
       </section>
-      {/* trek summary */}
-      {/* fast fact */}
+
+      {/* Trek Summary & Fast Facts */}
       <section className="mt-4">
         <div className="row">
-          {/* Trek Summary */}
-          <h2>Trek Summary</h2>
           <div className="col-md-8">
+            <h2>Trek Summary</h2>
             <p>{data.mdx.frontmatter.summary}</p>
           </div>
 
-          {/* Fast Facts */}
           <div className="col-md-4">
             <h4>Fast Facts</h4>
             <div className="table-responsive">
-        <table className="table">
-          <tbody>
-            <tr>
-              <td>Max Altitude</td>
-              <td>{data.mdx.frontmatter.max_elevation}</td>
-            </tr>
-            <tr>
-              <td>Duration</td>
-              <td>{data.mdx.frontmatter.duration}</td>
-            </tr>
-            <tr>
-              <td>Difficulty</td>
-              <td>{data.mdx.frontmatter.difficulty}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+              <table className="table">
+                <tbody>
+                  <tr>
+                    <td>Max Altitude</td>
+                    <td>{data.mdx.frontmatter.max_elevation}</td>
+                  </tr>
+                  <tr>
+                    <td>Duration</td>
+                    <td>{data.mdx.frontmatter.duration}</td>
+                  </tr>
+                  <tr>
+                    <td>Difficulty</td>
+                    <td>{data.mdx.frontmatter.difficulty}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
-
       </section>
 
-      {/* itinerary */}
+      {/* Itinerary */}
       <section className="mt-4">
         <h2>Brief Itinerary</h2>
         <div className="table-responsive">
@@ -89,26 +79,16 @@ const TrekDetail = ({ data, children }) => {
               {data.mdx.frontmatter.itineraries.map((day, index) => (
                 <tr key={index}>
                   <td>{day.day}</td>
-                  <td>
-                    {/* <strong>{day.title}</strong> */}
-                    {/* <br /> */}
-                    {day.title}
-                    {/* {day.description} */}
-                  </td>
-                  <td>
-                    {/* <GatsbyImage image={getImage(day.image)} alt={`Day ${day.day}`} className="img-fluid rounded mb-3" /> */}
-                    {day.overnight}
-                  </td>
+                  <td>{day.title}</td>
+                  <td>{day.overnight}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
       </section>
-      {/* request : custom itinerary */}
-      {/* request : detailed itinerary */}
 
-      {/* upcoming departure */}
+      {/* Upcoming Departure */}
       <section className="mt-4">
         <h2>Upcoming Departure</h2>
         <div className="table-responsive">
@@ -126,19 +106,10 @@ const TrekDetail = ({ data, children }) => {
               {data.mdx.frontmatter.upcoming_departures.map((upcm_dpt, index) => (
                 <tr key={index}>
                   <td>{upcm_dpt.date}</td>
-                  <td>
-                    {upcm_dpt.duration}
-                  </td>
-                  <td style={{ color: "#008450" }}>
-                    {upcm_dpt.availability}
-                  </td>
-                  <td>
-                    {upcm_dpt.cost_per_person}
-                  </td>
-                  <td>
-                    <button>inquire</button>
-                  </td>
-
+                  <td>{upcm_dpt.duration}</td>
+                  <td style={{ color: "#008450" }}>{upcm_dpt.availability}</td>
+                  <td>{upcm_dpt.cost_per_person}</td>
+                  <td><button className="btn btn-primary">Inquire</button></td>
                 </tr>
               ))}
             </tbody>
@@ -146,7 +117,7 @@ const TrekDetail = ({ data, children }) => {
         </div>
       </section>
 
-      {/* map */}
+      {/* About the Trek */}
       <section className="mt-4">
         <h2>About the Trek</h2>
         <p>{data.mdx.body}</p>
@@ -156,6 +127,7 @@ const TrekDetail = ({ data, children }) => {
     </div>
   );
 };
+
 
 export const query = graphql`
   query ($id: String) {
