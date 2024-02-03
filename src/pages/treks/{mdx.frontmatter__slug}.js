@@ -39,6 +39,39 @@ const TrekDetail = ({ data, children }) => {
       </section>
       {/* trek summary */}
       {/* fast fact */}
+      <section className="mt-4">
+        <div className="row">
+          {/* Trek Summary */}
+          <h2>Trek Summary</h2>
+          <div className="col-md-8">
+            <p>{data.mdx.frontmatter.summary}</p>
+          </div>
+
+          {/* Fast Facts */}
+          <div className="col-md-4">
+            <h4>Fast Facts</h4>
+            <div className="table-responsive">
+        <table className="table">
+          <tbody>
+            <tr>
+              <td>Max Altitude</td>
+              <td>{data.mdx.frontmatter.max_elevation}</td>
+            </tr>
+            <tr>
+              <td>Duration</td>
+              <td>{data.mdx.frontmatter.duration}</td>
+            </tr>
+            <tr>
+              <td>Difficulty</td>
+              <td>{data.mdx.frontmatter.difficulty}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+          </div>
+        </div>
+
+      </section>
 
       {/* itinerary */}
       <section className="mt-4">
@@ -130,6 +163,7 @@ export const query = graphql`
       frontmatter {
         title
         description
+        summary
         max_elevation
         duration
         difficulty
