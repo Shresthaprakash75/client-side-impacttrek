@@ -28,6 +28,7 @@ const TrekDetail = ({ data, children }) => {
         </div>
       </div>
 
+      {/* highlight */}
       <section className="mt-4">
         <h2>Highlights</h2>
         <ul className="list-group">
@@ -36,6 +37,8 @@ const TrekDetail = ({ data, children }) => {
           ))}
         </ul>
       </section>
+      {/* trek summary */}
+      {/* fast fact */}
 
       {/* itinerary */}
       <section className="mt-4">
@@ -69,6 +72,8 @@ const TrekDetail = ({ data, children }) => {
           </table>
         </div>
       </section>
+      {/* request : custom itinerary */}
+      {/* request : detailed itinerary */}
 
       {/* upcoming departure */}
       <section className="mt-4">
@@ -91,16 +96,16 @@ const TrekDetail = ({ data, children }) => {
                   <td>
                     {upcm_dpt.duration}
                   </td>
-                  <td style={{color: "#008450"}}>
-                  {upcm_dpt.availability}
+                  <td style={{ color: "#008450" }}>
+                    {upcm_dpt.availability}
                   </td>
                   <td>
-                  {upcm_dpt.cost_per_person}
+                    {upcm_dpt.cost_per_person}
                   </td>
                   <td>
-                  <button>inquire</button>
+                    <button>inquire</button>
                   </td>
-                  
+
                 </tr>
               ))}
             </tbody>
@@ -108,6 +113,7 @@ const TrekDetail = ({ data, children }) => {
         </div>
       </section>
 
+      {/* map */}
       <section className="mt-4">
         <h2>About the Trek</h2>
         <p>{data.mdx.body}</p>
