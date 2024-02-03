@@ -37,29 +37,76 @@ const TrekDetail = ({ data, children }) => {
         </ul>
       </section>
 
+      {/* itinerary */}
       <section className="mt-4">
-  <h2>Itinerary</h2>
-  <div className="accordion" id="itineraryAccordion">
-    {data.mdx.frontmatter.itineraries.map((day, index) => (
-      <div key={index} className="accordion-item">
-        <h2 className="accordion-header" id={`heading${index}`}>
-          <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target={`#collapse${index}`} aria-expanded="true" aria-controls={`collapse${index}`}>
-            Day {day.day}: {day.title}
-          </button>
-        </h2>
-        <div id={`collapse${index}`} className={`accordion-collapse collapse${index === 0 ? ' show' : ''}`} aria-labelledby={`heading${index}`} data-bs-parent="#itineraryAccordion">
-          <div className="accordion-body">
-            <GatsbyImage image={getImage(day.image)} alt={`Day ${day.day}`} className="img-fluid rounded mb-3" />
-            <p className="mb-3">{day.description}</p>
-            {/* You can add more details, styling, or components as needed */}
-          </div>
+        <h2>Brief Itinerary</h2>
+        <div className="table-responsive">
+          <table className="table">
+            <thead>
+              <tr>
+                <th className="border-top">Day</th>
+                <th className="border-top">Highlight</th>
+                <th className="border-top">Overnight</th>
+              </tr>
+            </thead>
+            <tbody>
+              {data.mdx.frontmatter.itineraries.map((day, index) => (
+                <tr key={index}>
+                  <td>{day.day}</td>
+                  <td>
+                    {/* <strong>{day.title}</strong> */}
+                    {/* <br /> */}
+                    {day.title}
+                    {/* {day.description} */}
+                  </td>
+                  <td>
+                    {/* <GatsbyImage image={getImage(day.image)} alt={`Day ${day.day}`} className="img-fluid rounded mb-3" /> */}
+                    {day.overnight}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
-      </div>
-    ))}
-  </div>
-</section>
+      </section>
 
-
+      {/* upcoming departure */}
+      <section className="mt-4">
+        <h2>Upcoming Departure</h2>
+        <div className="table-responsive">
+          <table className="table">
+            <thead>
+              <tr>
+                <th className="border-top">Date</th>
+                <th className="border-top">Duration</th>
+                <th className="border-top">Availability</th>
+                <th className="border-top">Cost per person</th>
+                <th className="border-top"></th>
+              </tr>
+            </thead>
+            <tbody>
+              {data.mdx.frontmatter.upcoming_departures.map((upcm_dpt, index) => (
+                <tr key={index}>
+                  <td>{upcm_dpt.date}</td>
+                  <td>
+                    {upcm_dpt.duration}
+                  </td>
+                  <td style={{color: "#008450"}}>
+                  {upcm_dpt.availability}
+                  </td>
+                  <td>
+                  {upcm_dpt.cost_per_person}
+                  </td>
+                  <td>
+                  <button>inquire</button>
+                  </td>
+                  
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
 
       <section className="mt-4">
         <h2>About the Trek</h2>
@@ -100,6 +147,13 @@ export const query = graphql`
               gatsbyImageData
             }
           }
+          overnight
+        }
+        upcoming_departures {
+          date
+          duration
+          availability
+          cost_per_person
         }
       }
       body
