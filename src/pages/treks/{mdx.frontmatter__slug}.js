@@ -9,62 +9,67 @@ const TrekDetail = ({ data, children }) => {
   const heroImage = getImage(data.mdx.frontmatter.hero_images[0].path);
 
   return (
-    <div className="container mt-5">
-      <Seo title={data.mdx.frontmatter.title} />
+<div className="container mt-5">
+  <Seo title={data.mdx.frontmatter.title} />
 
-      <div className="row">
-        <div className="col-md-8 position-relative text-center">
-          <GatsbyImage image={heroImage} alt={data.mdx.frontmatter.hero_images[0].alt} className="img-fluid rounded mb-3" />
-          <div className="position-absolute top-50 start-50 translate-middle">
-            <h1 className="text-white display-4">{data.mdx.frontmatter.title}</h1>
-          </div>
-        </div>
+  <div className="row justify-content-center">
+    <div className="col-md-8 position-relative text-center">
+      <GatsbyImage image={heroImage} alt={data.mdx.frontmatter.hero_images[0].alt} className="img-fluid rounded mb-3" />
+      <div className="position-absolute top-50 start-50 translate-middle">
+        <h1 className="text-white display-4">{data.mdx.frontmatter.title}</h1>
       </div>
+    </div>
+  </div>
 
-      {/* Highlights */}
-      <section className="mt-4">
+  {/* Highlights */}
+  <section className="mt-4">
+    <div className="row justify-content-center">
+      <div className="col-md-8">
         <h2>Highlights</h2>
         <ul className="list-group">
           {data.mdx.frontmatter.highlights.map((highlight, index) => (
             <li key={index} className="list-group-item">{highlight}</li>
           ))}
         </ul>
-      </section>
+      </div>
+    </div>
+  </section>
 
-      {/* Trek Summary & Fast Facts */}
-      <section className="mt-4">
-        <div className="row">
-          <div className="col-md-8">
-            <h2>Trek Summary</h2>
-            <p>{data.mdx.frontmatter.summary}</p>
-          </div>
-
-          <div className="col-md-4">
-            <h4>Fast Facts</h4>
-            <div className="table-responsive">
-              <table className="table">
-                <tbody>
-                  <tr>
-                    <td>Max Altitude</td>
-                    <td>{data.mdx.frontmatter.max_elevation}</td>
-                  </tr>
-                  <tr>
-                    <td>Duration</td>
-                    <td>{data.mdx.frontmatter.duration}</td>
-                  </tr>
-                  <tr>
-                    <td>Difficulty</td>
-                    <td>{data.mdx.frontmatter.difficulty}</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
+  {/* Trek Summary & Fast Facts */}
+  <section className="mt-4">
+    <div className="row justify-content-center">
+      <div className="col-md-8">
+        <h2>Trek Summary</h2>
+        <p>{data.mdx.frontmatter.summary}</p>
+      </div>
+      <div className="col-md-8">
+        <h4>Fast Facts</h4>
+        <div className="table-responsive">
+          <table className="table">
+            <tbody>
+              <tr>
+                <td>Max Altitude</td>
+                <td>{data.mdx.frontmatter.max_elevation}</td>
+              </tr>
+              <tr>
+                <td>Duration</td>
+                <td>{data.mdx.frontmatter.duration}</td>
+              </tr>
+              <tr>
+                <td>Difficulty</td>
+                <td>{data.mdx.frontmatter.difficulty}</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-      </section>
+      </div>
+    </div>
+  </section>
 
-      {/* Itinerary */}
-      <section className="mt-4">
+  {/* Itinerary */}
+  <section className="mt-4">
+    <div className="row justify-content-center">
+      <div className="col-md-8">
         <h2>Brief Itinerary</h2>
         <div className="table-responsive">
           <table className="table">
@@ -86,10 +91,27 @@ const TrekDetail = ({ data, children }) => {
             </tbody>
           </table>
         </div>
-      </section>
+      </div>
+    </div>
+  </section>
 
-      {/* Upcoming Departure */}
-      <section className="mt-4">
+  {/* Request a Custom Itinerary */}
+  <section className="mt-4">
+    <div className="row justify-content-center">
+      <div className="col-md-8">
+        <h2>Request a Custom Itinerary</h2> 
+        <p>Do you have any questions about this trek or would you like to see how it can be customized to your needs? 
+          {/* Our partners also run private treks just for you and your travel partners. To start organizing a private trek, */}
+        </p>
+        <button className="btn btn-primary">Get in touch here</button>
+      </div>
+    </div>
+  </section>
+
+  {/* Upcoming Departure */}
+  <section className="mt-4">
+    <div className="row justify-content-center">
+      <div className="col-md-8">
         <h2>Upcoming Departure</h2>
         <div className="table-responsive">
           <table className="table">
@@ -115,16 +137,34 @@ const TrekDetail = ({ data, children }) => {
             </tbody>
           </table>
         </div>
-      </section>
-
-      {/* About the Trek */}
-      <section className="mt-4">
-        <h2>About the Trek</h2>
-        <p>{data.mdx.body}</p>
-      </section>
-
-      {children}
+      </div>
     </div>
+  </section>
+
+  {/* Reviews */}
+<section className="mt-4">
+  <div className="row justify-content-center">
+    <div className="col-md-8">
+      <h2>Reviews</h2>
+      <p>{data.mdx.body}</p>
+    </div>
+  </div>
+</section>
+
+{/* About the Trek */}
+<section className="mt-4">
+  <div className="row justify-content-center">
+    <div className="col-md-8">
+      <h2>About the Trek</h2>
+      <p>{data.mdx.body}</p>
+    </div>
+  </div>
+</section>
+
+{/* {children} */}
+</div>
+
+
   );
 };
 
