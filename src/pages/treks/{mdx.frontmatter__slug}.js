@@ -16,7 +16,7 @@ const TrekDetail = ({ data, children }) => {
     <div className="col-md-8 position-relative text-center">
       <GatsbyImage image={heroImage} alt={data.mdx.frontmatter.hero_images[0].alt} className="img-fluid rounded mb-3" />
       <div className="position-absolute top-50 start-50 translate-middle">
-        <h1 className="text-white display-4">{data.mdx.frontmatter.title}</h1>
+        <h1 className="text-white display-4" style={{ background: 'rgba(0,0,0,0.5)' }}>{data.mdx.frontmatter.title} - {data.mdx.frontmatter.duration}</h1>
       </div>
     </div>
   </div>
