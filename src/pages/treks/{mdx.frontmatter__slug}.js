@@ -72,7 +72,7 @@ const TrekDetail = ({ data, children }) => {
       <div className="col-md-8">
         <h2>Brief Itinerary</h2>
         <div className="table-responsive">
-          <table className="table">
+          <table className="table table-hover">
             <thead>
               <tr>
                 <th className="border-top">Day</th>
@@ -83,7 +83,7 @@ const TrekDetail = ({ data, children }) => {
             <tbody>
               {data.mdx.frontmatter.itineraries.map((day, index) => (
                 <tr key={index}>
-                  <td>{day.day}</td>
+                  <td>Day {day.day}</td>
                   <td>{day.title}</td>
                   <td>{day.overnight}</td>
                 </tr>
@@ -96,17 +96,15 @@ const TrekDetail = ({ data, children }) => {
   </section>
 
   {/* Request a Custom Itinerary */}
-  <section className="mt-4">
-    <div className="row justify-content-center">
-      <div className="col-md-8">
-        <h2>Request a Custom Itinerary</h2> 
-        <p>Do you have any questions about this trek or would you like to see how it can be customized to your needs? 
-          {/* Our partners also run private treks just for you and your travel partners. To start organizing a private trek, */}
-        </p>
-        <button className="btn btn-primary">Get in touch here</button>
-      </div>
+  <section className="mt-4 bg-light">
+  <div className="row justify-content-center">
+    <div className="col-md-8">
+      <h2>Request a Custom Itinerary</h2> 
+      <p>Do you have any questions about this trek or would you like to see how it can be customized to your needs?</p>
+      <button className="btn btn-primary">Get in touch here</button>
     </div>
-  </section>
+  </div>
+</section>
 
   {/* Upcoming Departure */}
   <section className="mt-4">
