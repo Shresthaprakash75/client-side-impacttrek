@@ -7,8 +7,8 @@ const Header = () => {
             <div className="container">
                 <header className="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
                     {/* logo : impacttrek */}
-                    <a href="/" className="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-                        <span className="fs-4">
+                    <Link to="/" className="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                    <span className="fs-4">
                             <svg width="152" height="40" viewBox="0 0 472 136" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g filter="url(#filter0_d_47_12)">
                                     <path d="M4 64V128H236H468V64V-6.67572e-06H236H4V64ZM464 64V124H235.333H6.66667V64V3.99999H235.333H464V64Z" fill="black" />
@@ -34,13 +34,13 @@ const Header = () => {
                                 </defs>
                             </svg>
                         </span>
-                    </a>
+                    </Link>
 
                     {/* nav items */}
                     <ul className="nav nav-pills">
                         {/* <li className="nav-item"><a  className="nav-link active" aria-current="page">Home</a></li> */}
                         <li className="nav-item">
-                            <Link to="/choose-trek" className="nav-link text-secondary">Plan Trek </Link>    
+                            <Link to="/treks" className="nav-link">Choose Trek </Link>    
                         </li>
                         <li className="nav-item">
                             <Link to="/book-trek" className="nav-link text-secondary">Book Trek</Link>    

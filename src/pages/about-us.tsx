@@ -69,4 +69,4 @@ function ContactUs() {
 }
 
 export default ContactUs;
-export const Head: HeadFC = () => <title>Impacttrek | About Us</title>
+export const Head: HeadFC = () => <title>Impact trek | About Us</title>
