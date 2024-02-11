@@ -1,20 +1,42 @@
 /* Initially show the first set of paths */
 #first-paths {
-    display: block;
-  }
-  
-  /* Initially hide the second set of paths */
-  #second-paths {
-    display: none;
-  }
-  
-  /* Hide the first set of paths when hovering over the SVG */
-  svg:hover #first-paths {
-    display: none;
-  }
-  
-  /* Show the second set of paths when hovering over the SVG */
-  svg:hover #second-paths {
-    display: block;
-  }
-  
+  display: block;
+}
+
+/* Initially hide the second set of paths */
+#second-paths {
+  display: none;
+}
+
+/* Hide the first set of paths when hovering over the SVG */
+svg:hover #first-paths {
+  display: none;
+}
+
+/* Show the second set of paths when hovering over the SVG */
+svg:hover #second-paths {
+  display: block;
+}
+
+
+/* CSS for nav items */
+.nav-pills .nav-item .nav-link {
+  /* transition: background-color 0.3s, color 0.3s;  */
+  /* Smooth transition effect */
+  color: black;
+  /* font-weight: bold; */
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 0em;
+  font-family: "Roboto Black", "Arial Bold", sans-serif;
+}
+
+/* Change background color to black and text color to white when hovering over nav item */
+.nav-pills .nav-item:hover {
+  background-color: black;
+}
+
+.nav-pills .nav-item:hover .nav-link {
+  color: white;
+}
