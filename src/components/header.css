@@ -1,0 +1,20 @@
+/* Initially show the first set of paths */
+#first-paths {
+    display: block;
+  }
+  
+  /* Initially hide the second set of paths */
+  #second-paths {
+    display: none;
+  }
+  
+  /* Hide the first set of paths when hovering over the SVG */
+  svg:hover #first-paths {
+    display: none;
+  }
+  
+  /* Show the second set of paths when hovering over the SVG */
+  svg:hover #second-paths {
+    display: block;
+  }
+  
