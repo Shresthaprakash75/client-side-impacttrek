@@ -30,11 +30,13 @@ svg:hover #second-paths {
   line-height: 1.6;
   letter-spacing: 0em;
   font-family: "Roboto Black", "Arial Bold", sans-serif;
-  
 }
 
 /* Change background color to black and text color to white when hovering over nav item */
 .nav-pills .nav-item:hover {
-  /* background-color: black; */
-  border-bottom: 2px groove black;
+  background-color: black;
+}
+
+.nav-pills .nav-item:hover .nav-link {
+  color: white;
 }
